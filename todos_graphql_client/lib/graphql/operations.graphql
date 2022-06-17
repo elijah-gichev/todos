@@ -1,0 +1,25 @@
+query TodoGet {
+    todo {
+        id
+        isCompleted
+        task
+    }
+}
+
+mutation ToggleTask($id: Int!, $isCompleted:Boolean) {
+  update_todo(where: {id: {_eq: $id}}, _set: {isCompleted: $isCompleted}) {
+  	returning {isCompleted }  
+	}   
+}
+
+mutation DeleteTask($id:Int!){       
+	delete_todo(where: {id: {_eq: $id}}) {
+  	returning {id} 
+  }
+}
+
+mutation AddTask ($task:String!){
+	insert_todo(objects: {isCompleted: false, task: $task}) {
+  	returning {id} 
+  }
+}

@@ -1,0 +1,30 @@
+name: todos_graphql_client
+description: A sample command-line application.
+version: 1.0.0
+# homepage: https://www.example.com
+
+environment:
+  sdk: '>=2.16.2 <3.0.0'
+
+
+# dependencies:   
+#   graphql_codegen: ^0.9.0
+
+dependencies: 
+  json_serializable: ^6.2.0
+  json_annotation: ^4.5.0
+
+  graphql: ^5.1.1
+  graphql_flutter: ^5.1.0
+
+dev_dependencies:
+  lints: ^1.0.0
+  test: ^1.16.0
+
+  build_runner: ^2.1.11
+
+  graphql_codegen: ^0.9.0
+
+
+
+  
