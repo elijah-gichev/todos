@@ -40,7 +40,7 @@ jobs:
         
       - name: Format
         working-directory: ./todos_graphql
-        run: flutter format --set-exit-if-changed lib test
+        run: flutter format lib test
       - name: Run tests
         working-directory: ./todos_graphql
         run: flutter test --no-pub
