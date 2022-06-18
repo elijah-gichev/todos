@@ -8,9 +8,6 @@ on:
   push:
     branches: [ "main" ]
 
-  # Allows you to run this workflow manually from the Actions tab
-  workflow_dispatch:
-
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
   # This workflow contains a single job called "build"
@@ -21,11 +18,16 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-      - uses: actions/checkout@v3
-      - uses: subosito/flutter-action@v1.3.0
+      - uses: actions/checkout@v1
+      - uses: actions/setup-java@v1
+        with:
+          java-version: '8'
+      - uses: subosito/flutter-action@v1
+        with:
+          flutter-version: '2.10.5'
       - name: Install Dependencies
-        run: flutter packages get
-      
+        run: todos_graphql/flutter packages get
+      - run: todos_graphql/flutter build apk
       - name: Format
         run: flutter format --set-exit-if-changed lib test
       - name: Run tests
