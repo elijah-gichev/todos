@@ -31,7 +31,7 @@ jobs:
         
       - name: Install Dependencies
         working-directory: ./todos_graphql
-        run: todos_graphql/flutter build apk
+        run: flutter build apk
         
       - name: Format
         run: flutter format --set-exit-if-changed lib test
