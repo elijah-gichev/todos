@@ -25,8 +25,10 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           flutter-version: '2.10.5'
+      - name: cd todos_graphql   
+        run: cd todos_graphql
       - name: Install Dependencies
-        run: todos_graphql/flutter packages get
+        run: flutter packages get
       - run: todos_graphql/flutter build apk
       - name: Format
         run: flutter format --set-exit-if-changed lib test
