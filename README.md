@@ -1,3 +1,3 @@
 # todos
 
-todos add with graphql client
+todos app with graphql client
